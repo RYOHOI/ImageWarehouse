@@ -1,0 +1,524 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+body {
+  font-family: Georgia, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Heiti SC", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #585a62;
+  padding: 50px 50px 100px 50px;
+}
+em {
+  font-style: normal;
+}
+a {
+  color: #4285f4;
+  text-decoration: none;
+}
+a:hover {
+  border-bottom: 1px solid #4285f4;
+}
+a.absent {
+  color: #cc0000;
+}
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+h1,
+h3 {
+  width: 796px;
+  margin: 0 auto;
+  color: #34363f;
+}
+h5,
+h2,
+h4 {
+  color: #34363f;
+}
+h5,
+h2,
+h4,
+ul,
+hr,
+blockquote,
+ul,
+ol,
+dl,
+li,
+table,
+pre {
+  width: 700px;
+  margin: 0 auto;
+}
+p {
+  width: 700px;
+  margin: 0 auto;
+}
+h1 tt {
+  font-size: inherit;
+}
+h2 tt {
+  font-size: inherit;
+}
+h3 tt {
+  font-size: inherit;
+}
+h4 tt {
+  font-size: inherit;
+}
+h1 {
+  font-size: 22px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 8px;
+}
+h2 {
+  font-size: 28px;
+  font-weight: normal;
+  text-align: center;
+  border-bottom: 1px solid #e5e6e9;
+  margin-top: 64px;
+  margin-bottom: 24px;
+}
+h3 {
+  font-size: 23px;
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+h4 {
+  font-size: 18px;
+  padding-top: 16px;
+}
+h5 {
+  font-size: 16px;
+  padding: 0;
+  line-height: 2;
+}
+p {
+  font-size: 16px;
+  line-height: 2;
+  text-align: justify;
+  text-justify: ideographic;
+  margin-bottom: 16px;
+}
+li > p {
+  margin-bottom: 0;
+}
+hr {
+  background: #e5e6e9;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+h1 p,
+h2 p,
+h3 p,
+h4 p,
+h5 p,
+h6 p {
+  margin-top: 0;
+}
+li p.first {
+  display: inline-block;
+}
+li {
+  margin: 0;
+}
+ul,
+ol {
+  padding-left: 30px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+dl {
+  padding: 0;
+}
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+dl dt:first-child {
+  padding: 0;
+}
+dl dt > :first-child {
+  margin-top: 0;
+}
+dl dt > :last-child {
+  margin-bottom: 0;
+}
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+dl dd > :first-child {
+  margin-top: 0;
+}
+dl dd > :last-child {
+  margin-bottom: 0;
+}
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777;
+}
+blockquote > :first-child {
+  margin-top: 0;
+}
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+table {
+  padding: 0;
+  border-collapse: collapse;
+}
+table tr {
+  border-top: 1px solid #cccccc;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+table tr th {
+  font-weight: bold;
+  border: 1px solid #cccccc;
+  margin: 0;
+  padding: 6px 13px;
+}
+table tr td {
+  border: 1px solid #cccccc;
+  margin: 0;
+  padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+  margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+  margin-bottom: 0;
+}
+img {
+  padding: 24px 0;
+  max-width: 100%;
+}
+span.frame {
+  display: block;
+  overflow: hidden;
+}
+span.frame > span {
+  border: 1px solid #dddddd;
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 13px 0 0;
+  padding: 7px;
+  width: auto;
+}
+span.frame span img {
+  display: block;
+  float: left;
+}
+span.frame span span {
+  clear: both;
+  color: #333333;
+  display: block;
+  padding: 5px 0 0;
+}
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+span.align-center > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: center;
+}
+span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+span.align-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px 0 0;
+  text-align: right;
+}
+span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left;
+}
+span.float-left span {
+  margin: 13px 0 0;
+}
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right;
+}
+span.float-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: right;
+}
+code,
+tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+code {
+  font-size: "Courier New", "Courier";
+}
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+pre code,
+pre tt {
+  background-color: transparent;
+  border: none;
+}
+sup {
+  font-size: 0.83em;
+  vertical-align: super;
+  line-height: 0;
+}
+* {
+  -webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+  body {
+    position: relative;
+    margin: 0 auto;
+  }
+}
+@media print {
+  table,
+  pre {
+    page-break-inside: avoid;
+  }
+  pre {
+    word-wrap: break-word;
+  }
+}
+
+</style>
+<title>功能概述 · 课件编辑器</title>
+
+</head>
+<body>
+<h1>功能概述 · 课件编辑器</h1>
+
+<h2>入口</h2>
+
+<p>一般地，课件编辑器由资源主页处进入。在资源主页的课件列表中，选中某课件后，点击「编辑」或「新建」按钮后，以新开 tab 标签页的形式进入课件编辑器页面。不允许用户在浏览器中输入 URL 直接访问课件编辑器页面，这种情况会导致使用上下文被剥离，无法加载相应的课时资源。</p>
+
+<h2>新手引导</h2>
+
+<p>在用户首次进入课件编辑器时，使用 gif 动图结合说明文字的方式，对以下几个需要被突出的功能和操作进行讲解：</p>
+
+<ol>
+<li>在右侧资源面板中，筛选出目标习题后，对单个习题进行预览并通过拖曳添加至内容页。</li>
+<li>在右侧资源面板中，选中课件 tab 项后显示课件列表，点击某课件后显示该课件缩略列表，将单个缩略页拖曳进内容区或左侧缩略列表中。</li>
+<li>呼出多媒体面板，将图片、音频或视频资源拖曳进内容页。</li>
+<li>点击搜索入口，呼出全屏搜索界面，输入搜索文字后实时匹配出习题、课件或其他多媒体资源。</li>
+</ol>
+
+
+<p>依据登录帐户判定是否首次进入，新手引导对每个帐户仅出现一次，在编辑器界面中提供入口再次打开。</p>
+
+<h2>文件级别操作</h2>
+
+<p>在课件编辑器页面中，暂不支持诸如：删除本课件、切换到另一课件开始编辑、新建课件等文件级别操作。前述功能可在资源主页实现。</p>
+
+<h2>缩略页管理</h2>
+
+<p>课件编辑器页面左侧为缩略页列表区域，与传统幻灯演示稿编辑器类似。当某课件首次被打开时，默认第 1 页被选中；其他情况下，恢复上次编辑现场，与上次离开页面时被选中页保持一致。</p>
+
+<h3>新增</h3>
+
+<p>点击「新增」按钮在被选中页末尾追加空白页，被选中页随之切换为该新增空白页。</p>
+
+<p>课件缩略页列表可能较长，上下滚动后被选中页可被隐藏在视野外，这种情况下，新增空白页自动滚动至可见区域内。</p>
+
+<h3>删除</h3>
+
+<p>点击「删除」按钮删除被选中页，删除后切换至下一页为被选中页。</p>
+
+<h3>拖曳</h3>
+
+<p>支持拖曳任一缩略页上下调整页面顺序。</p>
+
+<hr />
+
+<p>注：快捷键支持：按住 <code>shift</code> 键同时点选缩略页，可选中多个页面，支持批量删除及拖曳。</p>
+
+<h3>被锁定页面</h3>
+
+<p>由于当前技术限制，*.ppt 格式课件无法被完全解析，所有页面被转化为图片。定义这类页面为被锁定页面，其中内容不可修改，但可以在背景之上任意添加习题、文本框或其他多媒体文件。缩略列表中用「锁」图标标识。</p>
+
+<p>资源主页的课件库可以文件格式被划分为 2 类：Windows 平台所支持的 *.ppt 格式及 101 系列产品兼容的 *.ndp 格式。它们的根本区别在于，后者可以将诸如习题、课件片段等教学资源对接进来。</p>
+
+<h3>嵌入习题数</h3>
+
+<p>为使教师在浏览课件缩略列表时可直观地感受到哪些页面有嵌入习题、嵌入了几道习题，在缩略页中用「题 × 2」字样标识习题数量。</p>
+
+<h2>编辑工具栏</h2>
+
+<p>从产品角度考虑，希望教师尽量将与资源引用无关的操作移至线下，且初期课件编辑器侧重点并不在提供丰富的编辑功能，因而精选出以下编辑工具在第一版课件编辑器中实现。</p>
+
+<h3>文本框</h3>
+
+<p>文本框为最基本可添加元素，编辑工具栏的大部分选项为文本框服务，接下来分别介绍。</p>
+
+<h4>新增</h4>
+
+<p>点击「新增文本框」图标后，在内容区中心出现新文本框，文本框内提示文字为「输入文字…」。最新被添加的文本框默认为选中态，点击后进入激活态，提示文字消失。当不停添加新文本框时，为避免互相重叠，后加文本框相对于前一个分别向下、向右位移 10px。</p>
+
+<h4>字号</h4>
+
+<p>选中某文本框后，点击「字号」图标，展开下拉列表，内置大标题、小标题、正文、注释 4 种格式，也可以通过文本框直接输入数字改变字号。</p>
+
+<p>在没有任何文本框被选中的情况下，通过选择内置格式可直接添加对应格式文本框。</p>
+
+<h4>颜色</h4>
+
+<p>颜色下拉列表中有若干内置颜色，支持自定义颜色。</p>
+
+<h4>字重、下划线、斜体、对齐方式</h4>
+
+<p>（略）</p>
+
+<h3>链接</h3>
+
+<p>支持对文本框或文本框内一段文本添加链接，链接形式有「课件页」和「超链接」2 种。</p>
+
+<h5>课件页</h5>
+
+<p>可指定链接目标为「上一页」「下一页」或直接输入课件页码。</p>
+
+<h5>超链接</h5>
+
+<p>在文本框中输入网页 URL 来指定链接目标。</p>
+
+<hr />
+
+<p>注：考虑到打开超链接时需要切换到浏览器中，是否采取课件页中内嵌浏览器的做法。</p>
+
+<h3>撤销与重做</h3>
+
+<p>为增强课件编辑器的可用性，需要支持对各类编辑操作的撤销与重做，最多可回退步数为 15。</p>
+
+<p>需要记录操作类型：</p>
+
+<ul>
+<li>缩略页
+
+<ul>
+<li>XXX</li>
+</ul>
+</li>
+<li>内容区域</li>
+<li>资源引用</li>
+<li>撤销重做</li>
+</ul>
+
+
+<h2>资源引用</h2>
+
+<p>公共筛选项：我的云盘，校本库，101 库。</p>
+
+<h3>习题</h3>
+
+<h3>课件</h3>
+
+<h3>多媒体</h3>
+
+<h2>资源搜索</h2>
+
+<h2>播放课件</h2>
+
+<h3>Pad 端</h3>
+
+<h3>PC 端</h3>
+
+<h2>保存机制</h2>
+
+<p>定义以下 4 类编辑操作为系统自动保存的触发条件：</p>
+
+<ul>
+<li>缩略页</li>
+<li>内容区域</li>
+<li>资源引用</li>
+<li>撤销重做</li>
+</ul>
+
+
+<p>经课件编辑器打开并编辑后的课件将以 *.ndp 格式被存入「我的云盘」中。</p>
+
+<h2>迭代空间</h2>
+
+<ul>
+<li>新建空白课件时，提供专为课堂教学定做的课件模板。</li>
+<li>更丰富的编辑功能。</li>
+</ul>
+
+</body>
+</html>
